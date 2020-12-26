@@ -1,11 +1,16 @@
 var express = require('express');
 var app = express();
 
+
+//require from things.js file 
+var things = require('./things.js');
+app.use('/things', things);
+
 app.get('/', function(req, res) {
     res.send('Welcome to our homepage');
 })
 
-app.route('/about').get(function(req, res) {
+app.get('/about', function(req, res) {
     res.send('welcome to about us page');
 })
 
